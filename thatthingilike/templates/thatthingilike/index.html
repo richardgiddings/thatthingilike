@@ -3,21 +3,28 @@
 
 {% block nav %}
 <form action="{% url 'index' %}" method="get">
-    {{locations}} {{tags}}
-    <input type="submit" value="Filter"/>
+    <div class="navigation">
+        <div class="locations">
+            {{locations}}
+        </div>
+        <div class="tags">
+            {{tags}}
+        </div>
+        <input type="submit" value="Find a Thing" class="nav-submit" />
+    </div>
 </form>
 {% endblock %}
 
 
 {% block main %}
 {% for thing in things %}
-    <div>
+    <div class="thing">
         <h2>{{ thing.title }}</h2>
         <p>{{ thing.description }}</p>
-        {{  thing.data_added }}<br/>
-        {{ thing.location}}<br/>
+        <p><a href="{{ thing.link }}" target="_blank">website</a></p>
+        <p class="added"><small>Added {{ thing.date_added }}</small></p>
         {% for tag in thing.tag.all %}
-            {{ tag }}<br/>
+            <div class="tag">{{ tag }}</div>
         {% endfor %}
     </div>
 {% endfor %}
