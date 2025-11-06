@@ -4,12 +4,12 @@ An app that lists things I like divided by location and tag. A tag being somethi
 
 ![Alt text](screenshot.png?raw=true "site")
 
-Key Features:
+## Key features
 - Uses Postgres as the database
 - Uses python-decouple to seperate out env variables.
 -
 
-Environment variables required:
+## Environment variables required
 
 For the database connection
 - DB_HOST
