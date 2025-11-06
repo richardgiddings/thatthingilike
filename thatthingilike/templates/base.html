@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>That Thing I Like</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header>
+            <h1>That Thing I Like</h1>
+        </header>
+        <nav>
+            {% block nav %}{% endblock %}
+        </nav>
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+        <footer>
+            <p>&copy; 2025 That Thing I Like</p>
+        </footer>
+    </body>
+</html>

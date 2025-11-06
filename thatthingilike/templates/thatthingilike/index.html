@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block nav %}
+<form action="{% url 'index' %}" method="get">
+    {{locations}} {{tags}}
+    <input type="submit" value="Filter"/>
+</form>
+{% endblock %}
+
+
+{% block main %}
+{% for thing in things %}
+    <div>
+        <h2>{{ thing.title }}</h2>
+        <p>{{ thing.description }}</p>
+        {{  thing.data_added }}<br/>
+        {{ thing.location}}<br/>
+        {% for tag in thing.tag.all %}
+            {{ tag }}<br/>
+        {% endfor %}
+    </div>
+{% endfor %}
+{% endblock %}

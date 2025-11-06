@@ -1,0 +1,4 @@
+.env
+thatthing_project/__pycache__/
+thatthingilike/__pycache__/
+thatthingilike/migrations/
