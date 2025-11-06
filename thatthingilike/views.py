@@ -3,12 +3,17 @@ from django.shortcuts import render
 from .models import Thing
 from .forms import TagForm, LocationForm
 
+from django.core.paginator import Paginator
+
 def index(request):
     
     tag = request.GET.get('tag', None)
     location = request.GET.get('location', None)
 
     things = Thing.objects.filter(tag=tag, location=location)
+    paginator = Paginator(things, 2) 
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
 
     # get location dropdown
     locations = LocationForm(initial={'location': location})
@@ -18,6 +23,10 @@ def index(request):
 
     return render(request, 
                     template_name='thatthingilike/index.html',
-                    context={'things': things, 
-                             'locations': locations,
-                             'tags': tags})
+                    context={
+                        'locations': locations,
+                        'tags': tags,
+                        'selected_location': location,
+                        'selected_tag': tag,                             
+                        "page_obj": page_obj
+                    })

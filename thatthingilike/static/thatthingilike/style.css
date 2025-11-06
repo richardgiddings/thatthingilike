@@ -11,12 +11,13 @@ header {
 }
 
 nav {
-    padding: 8px;
     border-bottom: 1px solid #a6282e;
+    text-align: center;
 }
 
 footer {
     padding: 4px;
+    text-align: center;
 }
 
 .navigation .locations,
@@ -27,7 +28,14 @@ footer {
 .navigation .nav-submit {
     display:inline-block;
     padding: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
+}
+
+.pagination {
+    border-top: 1px solid #a6282e;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
 }
 
 .thing {

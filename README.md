@@ -7,7 +7,7 @@ An app that lists things I like divided by location and tag. A tag being somethi
 ## Key features
 - Uses Postgres as the database
 - Uses python-decouple to seperate out env variables.
--
+- Pagination using Django's Paginator
 
 ## Environment variables required
 
