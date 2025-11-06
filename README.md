@@ -1,6 +1,6 @@
 # ThatThingILike
 
-An app that lists things I like divided by location and tag. A tag being something like "Running Races":
+An app that lists things I like divided by location and tag. A tag being something like "Running Races". Can then find things I previously liked by choosing a location and tag from the dropdowns.
 
 ![Alt text](screenshot.png?raw=true "site")
 
@@ -18,5 +18,5 @@ For the database connection
 - DB_PASSWORD
 - DB_PORT
 
-For Django:
+For Django
 - SECRET_KEY
