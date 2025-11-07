@@ -41,7 +41,7 @@
         <p><a href="{{ thing.link }}" target="_blank">website</a></p>
         <p class="added"><small>Added {{ thing.date_added }}</small></p>
         {% for tag in thing.tag.all %}
-            <div class="tag">{{ tag }}</div>
+            <div class="tag"><a href="?location={{selected_location}}&tag={{tag.id}}">{{tag}}</a></div>
         {% endfor %}
     </div>
 {% endfor %}
