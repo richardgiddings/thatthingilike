@@ -10,9 +10,9 @@ def index(request):
     tag = request.GET.get('tag', None)
     location = request.GET.get('location', None)
 
-    things = Thing.objects.filter(tag=tag, location=location)
+    things = Thing.objects.filter(tag=tag, location=location).order_by('-date_added')
     paginator = Paginator(things, 2) 
-    page_number = request.GET.get("page")
+    page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
     # get location dropdown
